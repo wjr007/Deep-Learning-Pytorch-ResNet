@@ -7,6 +7,10 @@
 
 Implementação prática, simulação matemática e treinamento de arquiteturas clássicas e modernas de **Redes Neurais Convolucionais (CNNs)** desenvolvidas em **PyTorch**. Este repositório cobre desde o dimensionamento analítico da pioneira **LeNet-5** até a implementação profunda das **Skip Connections (Conexões Residuais)** da **ResNet**, com validação experimental nos conjuntos de dados **MNIST** e **CIFAR-10**.
 
+<p align="center">
+  <img src="assets/resnet_architecture.jpg" alt="ResNet Architecture and Skip Connection" width="100%">
+</p>
+
 ---
 
 ## 📌 Destaques do Projeto
