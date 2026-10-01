@@ -115,8 +115,8 @@ $$\text{Downsample}(x) = \text{BatchNorm}(\text{Conv2d}_{1 \times 1}(x))$$
 
 ### 1. Clonar o repositório
 ```bash
-git clone https://github.com/wjr007/deep-learning-lab08-cnns-resnet.git
-cd deep-learning-lab08-cnns-resnet
+git clone https://github.com/wjr007/Deep-Learning-Pytorch-ResNet.git
+cd Deep-Learning-Pytorch-ResNet
 ```
 
 ### 2. Criar e ativar o ambiente virtual
