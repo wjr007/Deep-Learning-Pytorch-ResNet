@@ -56,9 +56,9 @@ $$\frac{\partial L}{\partial x} = \frac{\partial L}{\partial H} \cdot \frac{\par
 ---
 
 ### 3. Projeção de Atalho (Downsampling)
-Quando reduzimos as dimensões espaciais ($S = 2$) ou expandimos o número de canais ($C_{in} \neq C_{out}$), a soma matricial $F(x) + x$ exige alinhamento dimensional. Utiliza-se então uma convolução de $1 \times 1$ no atalho:
+Quando reduzimos as dimensões espaciais ($S = 2$) ou expandimos o número de canais ($C_{\text{in}} \neq C_{\text{out}}$), a soma matricial $F(x) + x$ exige alinhamento dimensional. Utiliza-se então uma convolução de $1 \times 1$ no atalho:
 
-$$\text{Downsample}(x) = \text{BatchNorm}\big(\text{Conv2D}_{1\times1}(x)\big)$$
+$$\text{Downsample}(x) = \text{BatchNorm}(\text{Conv2d}_{1 \times 1}(x))$$
 
 ---
 
@@ -67,7 +67,7 @@ $$\text{Downsample}(x) = \text{BatchNorm}\big(\text{Conv2D}_{1\times1}(x)\big)$$
 | Componente | Tipo | Descrição |
 | :--- | :--- | :--- |
 | `LeNet5Block` | Bloco Clássico | Conv $5 \times 5$ (6 canais) + Average Pooling $2 \times 2$ |
-| `IdentityResidualBlock` | Bloco Residual | Conexão de identidade direta para $C_{in} = C_{out}$ e $S=1$ |
+| `IdentityResidualBlock` | Bloco Residual | Conexão de identidade direta para $C_{\text{in}} = C_{\text{out}}$ e $S=1$ |
 | `BasicBlock` | Bloco Residual Flexível | Suporte a projeção de atalho com $1 \times 1$ conv + BatchNorm |
 | `MiniResNet` | Rede Completa | 2 estágios residuais (16 e 32 canais) para classificação de dígitos (MNIST) |
 | `ResNetCIFAR` | Rede Completa | 3 estágios residuais (64, 128 e 256 canais) adaptada para CIFAR-10 ($32 \times 32$) |
@@ -77,7 +77,7 @@ $$\text{Downsample}(x) = \text{BatchNorm}\big(\text{Conv2D}_{1\times1}(x)\big)$$
 ## 📊 Resultados Experimentais
 
 ### Classificação no CIFAR-10 (`ResNetCIFAR`)
-- **Pipeline de Treinamento:** Data Augmentation (`RandomCrop(32, padding=4)`, `RandomHorizontalFlip`), Normalização, Otimizador SGD ($\text{momentum}=0.9$, $\text{weight\_decay}=5 \times 10^{-4}$) e `CosineAnnealingLR`.
+- **Pipeline de Treinamento:** Data Augmentation (`RandomCrop(32, padding=4)`, `RandomHorizontalFlip`), Normalização, Otimizador SGD (`momentum=0.9`, `weight_decay=5e-4`) e `CosineAnnealingLR`.
 
 | Época | Loss Média (Treino) | Acurácia de Treino |
 | :---: | :---: | :---: |
